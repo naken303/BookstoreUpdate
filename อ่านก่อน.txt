@@ -1,11 +1,41 @@
+วิธีใช้ {
 ให้สร้าง database ใน mongodb ชื่อ bookstore
-และสร้าง collection ทั้งหมด 4 อันได้แก่
-- users
-- orders
-- carts
-- books
-โดยให้ import books.json ลงใน collection "books"
+  และสร้าง collection ทั้งหมด 4 อันได้แก่
+  - users
+  - orders
+  - carts
+  - books
+  โดยให้ import books.json ลงใน collection "books"
+  
+  หลังจากนั้นเปิด project พิมพ์ npm i ใน terminal และหลังติดตั้งสำเร็จ
+  ให้พิมพ์ npm run dev เพื่อ start project จากนั้นจึงเข้าไปที่
+  localhost:3000
+  โดยแต่ละหน้าจะมี url ที่ต่างกัน โดยวิธีการเข้าถึงแต่ละหน้ามีดังนี้
+  - index: localhost:3000/
+  - bookDetail: กดคลิ๊กที่ปกหนังสือซักเล่มในหน้า index
+  - admin book lists: localhost:3000/book
+  - admin user lists: localhost:3000/user (ไม่ได้ให้ไฟล์ data ของ user ไปแต่ทุก function ใช้งานได้แล้วเพราะงั้นรอ login กับ register จากโอมก่อนถึงมี user record แต่ถ้าอยากลองก็เพิ่มตรงๆลงไปใน database ได้เลยดู user model ก่อนเพิ่มด้วยนะ)
+}
 
-หลังจากนั้นเปิด project พิมพ์ npm i ใน terminal และหลังติดตั้งสำเร็จ
-ให้พิมพ์ npm run dev เพื่อ start project จากนั้นจึงเข้าไปที่
-localhost:3000
+รายละเอียดงาน {
+  ความสมบูรณ์ในแต่ละหน้าและความสมบูรณ์ของ function ที่มี
+  first รับผิดชอบ
+    - index page: 100%
+    - bookDetail page: 95%        (รอ order page)
+    - order page: 0%              (พึ่งถูกเพิ่มเข้ามา)
+    - admin book list: 100%
+    - admin user list: 100%
+    - admin order list: 0%       (มีการปรับเปลี่ยนเนื่องจากโจทย์ไม่ใช่การจอง)
+    critical feature: Order page (ต้องเพิ่มหน้านี้และ design ก่อน มีความเสี่ยงสูง และ ได้รับผลกระทบ 3 จุด bookDetail, admin order list, cart จะจัดการให้พรุ่งนี้)
+
+  โอม รับผิดชอบ
+    - login/register: 0%          
+    - About us, Contact, FQA page: 0%
+
+  เจต รับผิดชอบ
+    - cart page: 50%             (รอเจตส่งหน้าตระกร้า และ login/register ระบบตระกร้าถึงจะสมบูรณ์ได้ 80% เหลืออีก 20% เพราะต้องเชื่อมกับ orderpage)
+    - cart popup: 0%
+
+  ปล. โดยที่ backend ได้เขียนไปแล้วในส่วนใหญ่เพราะคาดการว่าจะไม่ทันเวลาเลยช่วยเขียนในบางส่วน เดี๋ยวจะมีการแบ่งงานพร้อมอธิบาย การจัดการใหม่อีกครั้งว่าต้องทำอะไรเพิ่มบ้างในส่วน back-end
+  (อย่างที่สังเกตว่า database มีการเปลี่ยนแปลงเพราะการจองถูกเปลี่ยนเป็น order จึงอาจจะต้องมีการเปลี่ยนการออกแบบเพื่อให้ง่ายต่อการทำความเข้าใจ และการใช้ chatgpt)
+}
